@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Interactive Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> <!-- GSAP for animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            
+                <div class="left">
+                    <a href="#portfolio">3D Portfolio</a>
+                </div>
+                <div class="center">
+                    <a href="#home">Home</a>
+                </div>
+                <div class="right">
+                    <a href="#contact">Contact</a>
+                </div>
+            
+        </nav>
+    </header>
+
+    <div class="section" id="home">
+        <div class="content">
+            <h1>Judul disini ya  <span>span doang ini</span></h1>
+            <p>ini jatoh nya deskripsi dari gambar disamping atau bisa juga opening ya</p>
+            <a href="#portfolio" class="learn-more">learn more</a>
+        </div>
+
+        <spline-viewer url="https://prod.spline.design/FVZWbQH2B6ndj9UU/scene.splinecode" events-target="global"></spline-viewer>
+
+        
+    </div>
+
+
+    <!-- Portfolio Section -->
+    <div class="section" id="portfolio">
+        <!-- Text content for portfolio -->
+        <div class="portfolio-text">
+            <h2>Available 2 Colors</h2>
+            <p>u can switch the button to see different color from shoe.</p>
+        </div>
+
+        <!-- Left corner toggle switch -->
+        <div class="toggle-container">
+            <span class="toggle-label">Left</span>
+            <input type="checkbox" id="rotateToggle" class="toggle">
+            <span class="toggle-label">Right</span>
+            
+            <!-- <div class="three-container">
+                <canvas id="threeCanvas"></canvas>
+            </div> -->
+        
+        </div>
+    </div>
+
+    
+<!-- Contact Section -->
+    <div class="section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out for collaboration or any inquiries!</p>
+        
+        <form class="contact-form" action="#" method="post">
+            <div class="form-row">
+                <input type="text" id="first-name" name="first-name" placeholder="First name *" required>
+                <input type="text" id="last-name" name="last-name" placeholder="Last name *" required>
+            </div>
+
+            <div class="form-row">
+                <input type="text" id="company" name="company" placeholder="Company *" required>
+                <input type="text" id="position" name="position" placeholder="Position *" required>
+            </div>
+
+            <div class="form-row">
+                <input type="email" id="email" name="email" placeholder="Corporate Email *" required>
+                <input type="tel" id="phone" name="phone" placeholder="Mobile Phone *" required>
+            </div>
+
+            <textarea id="message" name="message" rows="4" placeholder="Message *" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <h3>3D Portofolio</h3>
+            <p>Showcasing the best 3D models and designs. Contact us for collaborations or inquiries!</p>
+            <ul class="socials">
+                <!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li> -->
+                <li><a href="https://x.com/NetmarksID" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/netmarks_id/?hl=ID" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/netmarks-indonesia/posts/?feedView=all" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 untuk 3d Website. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script> -->
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+

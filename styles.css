@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #4B0082, #2E004D, #000); /* Ensure body background matches */
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Adjust height */
+    background: linear-gradient(to right, #4B0082, #2E004D, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Space out the items */
+    align-items: center;
+    width: 100%; /* Make nav take the full width */
+    padding: 0 50px; /* Add padding to the left and right for spacing */
+}
+
+nav .left, nav .center, nav .right {
+    flex: 1; /* Make each part of the nav (left, center, right) take up equal space */
+    text-align: center; /* Center the text in each section */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.3em; /* Add space between letters */
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.three-container {
+    width: 120%; /* Reduce width to fit within half the page */
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute; /* Allow the 3D scene to overlay */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure it's behind text */
+    background-color: transparent; /* Transparent to show background */
+}
+
+/* Section Styling */
+.section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    margin-top: 50px; /* Adjust for header height */
+    background: linear-gradient(to right, #4B0082, #2E004D, #000);
+}
+
+#home {
+    position: relative;
+    background-color: linear-gradient(to right, #4B0082, #2E004D, #000); /* Consistent gradient */
+}
+
+.content {
+    max-width: 50%;
+    z-index: 2;
+}
+
+.content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.content h1 span {
+    display: block;
+    font-size: 5rem;
+    color: #fff;
+}
+
+.content p {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    max-width: 400px;
+    line-height: 1.5;
+     
+}
+
+/* Adjust the size of the Spline Viewer */
+spline-viewer {
+    width: 100%;  /* Allow it to take up full width of container */
+    height: auto;  /* Auto-adjust height to maintain aspect ratio */
+    max-width: 500px;   /* Set a reasonable max width */
+    max-height: 500px;  /* Set a reasonable max height */
+    object-fit: contain; /* Ensures the Spline model fits within its box without cropping */
+    display: block;
+    margin: 0 auto;  /* Center horizontally */
+}
+
+/* Learn more button */
+.learn-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+}
+
+.learn-more:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.image-container {
+    max-width: 50%;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1s, opacity 1s;
+}
+
+/* Portfolio Section */
+#portfolio {
+    display: flex;
+    justify-content: space-between; /* Align items to the opposite ends */
+    align-items: center; /* Vertically center the items */
+    height: 100vh;
+    padding: 0 50px; /* Add padding to the section */
+    background: linear-gradient(to right, #4B0082, #2E004D, #000); /* Background color */
+    color: white;
+}
+
+/* Position toggle switch on the left */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align the content to the left */
+}
+
+.toggle-label {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin: 0 10px;
+    color: #fff;
+}
+
+/* Style for the toggle switch */
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background: #67fc6f91;
+    border-radius: 30px;
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    transition: background 0.4s ease;
+}
+
+.toggle::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+
+.toggle:checked {
+    background: #ff4343;
+}
+
+.toggle:checked::before {
+    transform: translateX(30px);
+}
+
+/* Align the portfolio text to the right */
+.portfolio-text {
+    text-align: right;
+    max-width: 600px; /* Adjust width as needed */
+    flex-grow: 1; /* Ensure it grows and pushes towards the right */
+    order: 1; /* Force this element to appear on the right */
+}
+
+.toggle-container {
+    order: -1; /* Force this element to appear on the left */
+}
+
+#portfolio h2 {
+    margin-bottom: 20px;
+    font-size: 3rem; /* Adjust font size */
+    color: #fff;
+}
+
+#portfolio p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: #bbb;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    background-color: linear-gradient(to right, #4B0082, #2E004D, #000); /* Ensure consistent background */
+    padding: 50px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Align content to the left */
+    height: 100vh; /* Full height for vertical centering */
+}
+
+#contact h2 {
+    margin-bottom: 20px; /* Space between h2 and p */
+    font-size: 3rem; /* Adjust font size */
+    color: #fff;
+}
+
+#contact p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: #bbb;
+    margin-bottom: 30px; /* Add space below the paragraph */
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 48%; /* Adjust input width */
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    width: 100%; /* Full width for textarea */
+    height: 100px;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #6A0DAD; /* Highlighted border color */
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #6A0DAD; /* Matching button color */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #4B0082; /* Darker hover color */
+}
+
+/* Footer Section */
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+.footer-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-content p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.footer-content .socials {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content .socials li {
+    margin: 0 10px;
+}
+
+.footer-content .socials li a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-content .socials li a:hover {
+    color: #f39c12;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
