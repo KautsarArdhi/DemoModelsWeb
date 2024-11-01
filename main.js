@@ -16,7 +16,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const ambientLight = new THREE.AmbientLight(0xffffff, 1);
 scene.add(ambientLight);
 
-let model;
+let model , model2;
 let rotateLeft = false;
 let rotateRight = false;
 
@@ -28,6 +28,16 @@ loader.load('./models/Karakter.glb', function (gltf) {
     model.position.set(-4.5, 0, 0);
 
     scene.add(model);
+    animate();
+});
+
+loader.load('./models/chuck_taylor_blue.glb', function (gltf) {
+    model2 = gltf.scene;
+    model2.scale.set();
+    model2.position.set();
+    
+    
+    scene.add(model2);
     animate();
 });
 

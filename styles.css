@@ -23,7 +23,6 @@ header {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    /* border-bottom: 1px solid rgba(255, 255, 255, 0.288); Menambahkan garis putih di bawah */
     transition: top 0.3s ease;
 }
 
