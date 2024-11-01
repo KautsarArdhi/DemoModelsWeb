@@ -1,0 +1,126 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1a0b36, #3b0f63);
+    color: #fff;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Model Sections */
+.model-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    padding: 20px 0;
+}
+
+.text-content {
+    text-align: center;
+}
+
+.canvas-container {
+    width: 300px;
+    height: 300px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Features Section */
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    text-align: center;
+}
+
+.feature-card {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    text-align: center;
+    width: 80%;
+}
+
+.newsletter-section input[type="email"] {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.newsletter-section button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}

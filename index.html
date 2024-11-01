@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Portofolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">3D SWITCH</a></li>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">FUNCTION</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+    <!-- Section Model 1 -->
+    <section class="model-section">
+        <div class="text-content">
+            <h1>Model follow</h1>
+            <p>lihat model mengikuti kemana mouse kita pergi</p>
+            <button>learn more</button>
+        </div>
+        <div class="canvas-container">
+            <canvas id="canvas1"></canvas>
+        </div>
+    </section>
+
+    <!-- Section Model 2 -->
+    <section class="model-section">
+        <div class="canvas-container">
+            <canvas id="canvas2"></canvas>
+        </div>
+        <div class="text-content">
+            <h1>this model for demo</h1>
+            <p>u can switch the button to see model rotate right and left.</p>
+            <div class="toggle-container">
+                <label>Left</label>
+                <input type="checkbox" id="rotateToggle">
+                <label>Right</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="feature-card">Blank<br><small>bisa untuk fungsi atau kelebihan.</small></div>
+        <div class="feature-card">Breathable<br><small>bisa untuk fungsi atau kelebihan.</small></div>
+        <div class="feature-card">Comfortable<br><small>bisa untuk fungsi atau kelebihan.</small></div>
+        <div class="feature-card">Durable<br><small>bisa untuk fungsi atau kelebihan.</small></div>
+        <div class="feature-card">Stable<br><small>bisa untuk fungsi atau kelebihan.</small></div>
+        <div class="feature-card">Vegan<br><small>bisa untuk fungsi atau kelebihan.</small></div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <h2>Stay in the loop.</h2>
+        <p>drop ur email for news.</p>
+        <input type="email" placeholder="Enter your email">
+        <button>Submit</button>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <p>3D Portofolio</p>
+    <p>Showcasing the best 3D models and designs. Contact us for collaborations or inquiries!</p>
+    <div class="social-icons">
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+    </div>
+    <p>&copy; 2024 untuk 3d Website. All rights reserved.</p>
+</footer>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
